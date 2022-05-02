@@ -1,4 +1,5 @@
 import 'package:app_kediko_1/constants/colors.dart';
+import 'package:app_kediko_1/screens/home/widget/restaurant_info.dart';
 //importando los colores de la app
 import 'package:flutter/material.dart';
 import 'package:app_kediko_1/widgets/custom_app_bar.dart';
@@ -23,7 +24,8 @@ class _HomePageState extends State<HomePage> {
           CustomAppBar(
             Icons.arrow_back_ios_outlined,
             Icons.search_outlined,
-          )
+          ),
+          RestaurantInfo(),
         ],
       ),
     );
