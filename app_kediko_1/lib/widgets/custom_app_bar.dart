@@ -13,31 +13,30 @@ class CustomAppBar extends StatelessWidget {
         top: MediaQuery.of(context).padding.top,
         left: 25,
         right: 25,
+        //pocisionamiento de los iconos
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
             onTap: leftCallback != null ? () => leftCallback!() : null,
-            child: Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Icon(leftIcon),
-            ),
+            child: _buildIcon(leftIcon),
           ),
-          Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: Icon(leftIcon),
-          )
+          _buildIcon(rightIcon),
         ],
       ),
     );
   }
+}
+
+//declarando el constructor _buildIcon
+Widget _buildIcon(IconData icon) {
+  return Container(
+    padding: EdgeInsets.all(8),
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      color: Colors.white,
+    ),
+    child: Icon(icon),
+  );
 }
